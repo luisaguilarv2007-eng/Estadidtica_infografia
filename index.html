@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía Interactiva | CECOCESOLA</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Librería para Gráficos Interactivos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <h1><i class="fa-solid fa-hospital-user"></i> Análisis Estadístico: CECOCESOLA</h1>
+            <p>Justificación Cuantitativa del Sistema Automatizado de Salud</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav class="tabs">
+            <button class="tab-btn active" onclick="showTab('tab1')">
+                <i class="fa-solid fa-file-invoice-dollar"></i> Verificación de Pagos
+            </button>
+            <button class="tab-btn" onclick="showTab('tab2')">
+                <i class="fa-solid fa-vial"></i> Envío de Resultados
+            </button>
+        </nav>
+
+        <!-- Pestaña 1: Facturación -->
+        <section id="tab1" class="tab-content active">
+            <div class="grid-layout">
+                <div class="info-panel animate-left">
+                    <h2><i class="fa-solid fa-chart-line"></i> Correlación: Procesamiento de Caja</h2>
+                    <p>Análisis del impacto del manejo manual de comprobantes de pago en los tiempos de respuesta de todas las áreas.</p>
+                    
+                    <div class="variables-box">
+                        <p><strong>Variable Independiente (X):</strong><br> Volumen de comprobantes de pago procesados por día.</p>
+                        <p><strong>Variable Dependiente (Y):</strong><br> Tiempo de retraso promedio en la validación (minutos).</p>
+                    </div>
+
+                    <div class="interpretation-box">
+                        <h3><i class="fa-solid fa-magnifying-glass-chart"></i> Interpretación</h3>
+                        <p>Se observa una <strong>Correlación Positiva Fuerte</strong>. El procesamiento manual de comprobantes genera un cuello de botella exponencial. Esto justifica el requerimiento de integración directa entre Caja y todas las áreas de atención.</p>
+                    </div>
+                </div>
+                
+                <div class="chart-panel animate-right">
+                    <canvas id="chartPagos"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pestaña 2: Resultados -->
+        <section id="tab2" class="tab-content">
+            <div class="grid-layout">
+                <div class="info-panel">
+                    <h2><i class="fa-solid fa-paper-plane"></i> Correlación: Entrega de Resultados</h2>
+                    <p>Evaluación de la carga operativa al enviar informes de laboratorio y Rayos X de forma manual vía mensajería.</p>
+                    
+                    <div class="variables-box">
+                        <p><strong>Variable Independiente (X):</strong><br> Cantidad de exámenes médicos validados al día.</p>
+                        <p><strong>Variable Dependiente (Y):</strong><br> Tiempo invertido en el envío manual por WhatsApp (minutos).</p>
+                    </div>
+
+                    <div class="interpretation-box">
+                        <h3><i class="fa-solid fa-magnifying-glass-chart"></i> Interpretación</h3>
+                        <p>Existe una <strong>Correlación Positiva Fuerte</strong>. A mayor volumen de exámenes, el tiempo operativo desperdiciado crece críticamente. Esto justifica la necesidad de un módulo de envío automatizado.</p>
+                    </div>
+                </div>
+                
+                <div class="chart-panel">
+                    <canvas id="chartResultados"></canvas>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <ul>
+                <li>Luisangel Aguilar 31.960.926</li>
+                <li>Alianny Rodríguez 29.915.912</li>
+                <li>Reibert Alzuru 32.774.319</li>
+                <li>Kenneth Espinoza 30.753.863</li>
+                <li><strong>4to semestre - Sección A</strong></li>
+            </ul>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

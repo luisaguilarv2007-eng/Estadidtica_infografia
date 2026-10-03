@@ -1,0 +1,247 @@
+/* Paleta de Colores Médica y Variables */
+:root {
+    --primary-color: #0284c7;
+    --secondary-color: #0ea5e9;
+    --accent-color: #38bdf8;
+    --bg-color: #f0f9ff;
+    --text-main: #334155;
+    --text-light: #64748b;
+    --white: #ffffff;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* Encabezado */
+.header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 3rem 1rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Contenedor Principal */
+.container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Pestañas de Navegación */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tab-btn {
+    background-color: var(--white);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tab-btn:hover {
+    background-color: var(--bg-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.tab-btn.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Contenido de las Pestañas */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Layout en Grid */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+    width: 100%; /* Evita desbordamiento general */
+    box-sizing: border-box;
+}
+
+/* Paneles de Información */
+.info-panel {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--primary-color);
+    font-size: 1.1rem;
+    width: 100%; /* Límite de ancho */
+    box-sizing: border-box;
+}
+
+.info-panel h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.variables-box {
+    background-color: var(--bg-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    border: 1px solid #bae6fd;
+}
+
+.interpretation-box {
+    background-color: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+/* Contenedor del Gráfico */
+.chart-panel {
+    background-color: var(--white);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    min-height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Límite de ancho estricto */
+    box-sizing: border-box;
+    position: relative; /* Clave para que Chart.js sea responsive */
+}
+
+canvas {
+    max-width: 100% !important; /* Fuerza a la gráfica a no salirse del contenedor en móvil */
+    max-height: 600px;
+}
+/* Animaciones CSS */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .tabs {
+        flex-direction: column;
+    }
+    
+    .chart-panel {
+        min-height: 350px; /* Gráfico más pequeño en móvil */
+        padding: 1rem;
+    }
+
+    .info-panel {
+        padding: 1.5rem; /* Menos espacio interior en teléfonos */
+        font-size: 1rem;
+    }
+    
+    .info-panel h2 {
+        font-size: 1.4rem;
+    }
+}
+/* =========================================
+   FOOTER DEL EQUIPO (CORREGIDO)
+   ========================================= */
+footer {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 2rem 1rem;
+    margin-top: 4rem;
+    width: 100%;
+    overflow-x: hidden; /* Estrictamente evita que rompa el ancho de la página */
+    box-sizing: border-box;
+    box-shadow: 0 -10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los nombres bajen de línea si no caben */
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+footer li {
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+footer li:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+    border-color: var(--white);
+}
+
+footer li strong {
+    color: #e0f2fe;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Responsividad natural para móviles */
+@media (max-width: 768px) {
+    footer {
+        padding: 1.5rem 0.5rem;
+    }
+    
+    footer ul {
+        gap: 0.6rem;
+    }
+
+    footer li {
+        font-size: 0.9rem; /* Reduce ligeramente el texto en teléfonos */
+        padding: 0.5rem 0.8rem;
+    }
+}
